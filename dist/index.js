@@ -358,7 +358,7 @@ function run() {
             if (!('GORELEASER_CURRENT_TAG' in process.env)) {
                 process.env.GORELEASER_CURRENT_TAG = tag;
             }
-            yield exec.exec(`${goreleaser} ${args}${snapshot}`);
+            yield exec.exec(`${goreleaser} ${args}`);
         }
         catch (error) {
             core.setFailed(error.message);

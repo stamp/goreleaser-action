@@ -48,7 +48,7 @@ async function run(): Promise<void> {
     if (!('GORELEASER_CURRENT_TAG' in process.env)) {
       process.env.GORELEASER_CURRENT_TAG = tag;
     }
-    await exec.exec(`${goreleaser} ${args}${snapshot}`);
+    await exec.exec(`${goreleaser} ${args}`);
   } catch (error) {
     core.setFailed(error.message);
   }
